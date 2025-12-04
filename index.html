@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+   <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <title>Student Club Information</title>
+
+   <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .club-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .page-title {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #800000;
+        }
+        .btn-main {
+            width: 100%;
+        }
+        #output {
+            white-space: pre-line;
+            margin-top: 20px;
+        }
+   </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2 class="page-title">School Club Information</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="club-card">
+                <div class="mb-3">
+                    <!--basic form label which includes the dropdown thing (class="form-select")-->
+                    <label for="club-select" class="form-label">Select a club:</label>
+
+                    <select id="club-select" class="form-select">
+                        <option value="Social Studies Club">SocSci Club</option>
+                        <option value="Basketball Varsity">Basketball Varsity</option>
+                        <option value="Marching Band">Marching Band</option>
+                    </select>
+                </div>
+
+                <button id="show-btn" class="btn btn-danger btn-main" py-click="show_selected_club">
+                    Show Club Information
+                </button>
+
+                <!--very important since the id of this is "output", this is where the python text will target and show the text-->
+                <div id="output" class="mt-3 border rounded p-3 bg-light"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--connects html to py-->
+<script type="py" src="main.py"></script>
+
+</body>
+</html>
